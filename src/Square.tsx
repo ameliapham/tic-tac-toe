@@ -10,7 +10,23 @@ export function Square(props: Props) {
 
     return (
         <>
-            <button className={cx(className, classes.root)}>X</button>
+            <div>
+                <button className={cx(className, classes.square)}>1</button>
+                <button className={cx(className, classes.square)}>2</button>
+                <button className={cx(className, classes.square)}>3</button>
+            </div>
+            <div>
+                <button className={cx(className, classes.square)}>4</button>
+                <button className={cx(className, classes.square)}>5</button>
+                <button className={cx(className, classes.square)}>6</button>
+            </div>
+            <div>
+                <button className={cx(className, classes.square)}>7</button>
+                <button className={cx(className, classes.square)}>8</button>
+                <button className={cx(className, classes.square)}>9</button>
+            </div>
+
+
         </>
     )
 }
@@ -18,7 +34,7 @@ export function Square(props: Props) {
 const useStyle = tss
     .withName({ Square })
     .create({
-        "root": {
+        "square": {
             "border": "1px solid red",
             "width": "50px",
             "height": "50px",

@@ -1,11 +1,37 @@
-import { Board } from "./Board/Board"
-
+import { Board } from "./Board/Board";
+import { GlobalStyles } from "tss-react"
+import { tss } from "tss-react/mui";
 
 export function App() {
-  return (
-    <>
-      <Board/>
-    </>
-  )
-  
+    const { classes } = useStyle()
+    return (
+        <>
+            <GlobalStyles
+                styles={{
+                    "body": {
+                        "margin": 0
+                    }
+                }}
+            />
+            <div className={classes.root}>
+            <Board className={classes.board}/>
+            </div>
+        </>
+    )
 }
+
+const useStyle = tss.create({
+    "root": {
+        "display": "flex",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "height": "100vh"
+    },
+    "board": (()=>{
+
+        const size = "calc(min(100vh, 100vw) - 50px)";
+
+        return { "width": size, "height": size };
+
+    })()
+})

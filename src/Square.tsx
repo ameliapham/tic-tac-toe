@@ -4,7 +4,7 @@ type Props = {
     className?: string
 }
 
-export function Square(props: Props) {
+export function Board(props: Props) {
     const { className } = props
     const { cx, classes } = useStyle()
 
@@ -32,7 +32,7 @@ export function Square(props: Props) {
 }
 
 const useStyle = tss
-    .withName({ Square })
+    .withName({ Square: Board })
     .create({
         "square": {
             "border": "1px solid red",

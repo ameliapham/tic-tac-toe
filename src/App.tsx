@@ -1,10 +1,10 @@
-import { Square } from "./Square"
+import { Board } from "./Square"
 
 
 export function App() {
   return (
     <>
-      <Square/>
+      <Board/>
     </>
   )
   

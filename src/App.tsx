@@ -1,4 +1,4 @@
-import { Board } from "./Square"
+import { Board } from "./Board"
 
 
 export function App() {

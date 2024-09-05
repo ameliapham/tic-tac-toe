@@ -11,7 +11,7 @@ export function Square(props: Props) {
 
     return (
         <>
-            <button className={cx(className, classes.square)}>{value}</button>
+            <div className={cx(className, classes.square)}>{value}</div>
         </>
     )
 }

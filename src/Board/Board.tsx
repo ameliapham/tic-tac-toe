@@ -1,11 +1,13 @@
 import { Square } from "./Square"
+import { tss } from "tss-react/mui"
 
 
 
 export function Board() {
    
+    const {classes} = useStyle()
     return (
-        <>
+        <div className={classes.root}>
             <div>
                 <Square value={1}/>
                 <Square value={2}/>
@@ -21,6 +23,12 @@ export function Board() {
                 <Square value={8}/>
                 <Square value={9}/>
             </div>
-        </>
+        </div>
     )
 }
+
+const useStyle = tss.create({
+    "root" : {
+        "display" : "flex"
+    }
+})

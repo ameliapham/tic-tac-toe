@@ -36,21 +36,13 @@ export function Board(props: Props) {
 
     return (
         <div className={cx(className, classes.root)}>
-            <div className={classes.row}>
-                {[0, 1, 2].map(y => (
-                    <Square key={y} state={state[0][y]} className={classes.square} onClick={() => onClick({ x: 0, y })} />
-                ))}
-            </div>
-            <div className={classes.row}>
-                {[0, 1, 2].map(y => (
-                    <Square key={y} state={state[1][y]} className={classes.square} onClick={() => onClick({ x: 1, y })} />
-                ))}
-            </div>
-            <div className={classes.row}>
-                {[0, 1, 2].map(y => (
-                    <Square key={y} state={state[2][y]} className={classes.square} onClick={() => onClick({ x: 2, y })} />
-                ))}
-            </div>
+            {[0, 1, 2].map(x => (
+                <div key={x} className={classes.row}>
+                    {[0, 1, 2].map(y => (
+                        <Square key={y} state={state[x][y]} className={classes.square} onClick={() => onClick({ x, y })} />
+                    ))}
+                </div>
+            ))}
         </div>
     )
 }

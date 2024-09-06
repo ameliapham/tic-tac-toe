@@ -16,7 +16,7 @@ export function Square(props: Props) {
         <>
             <div 
                 className={cx(classes.square, className)}
-                onClick={state !== ""? onClick: undefined}
+                onClick={state === ""? onClick: undefined}
             >
                 {state !== "" &&
                     <img src={state === "x" ? xSvg : oSvg} className={classes.img} />

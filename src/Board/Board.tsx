@@ -12,19 +12,19 @@ export function Board(props: Props) {
     return (
         <div className={cx(className, classes.root)}>
             <div className={classes.row}>
-                <Square value={1} className={classes.square} />
-                <Square value={2} className={classes.square}/>
-                <Square value={3} className={classes.square}/>
+                <Square state={""} className={classes.square} />
+                <Square state={""} className={classes.square}/>
+                <Square state={""} className={classes.square}/>
             </div>
             <div className={classes.row}>
-                <Square value={4} className={classes.square}/>
-                <Square value={5} className={classes.square}/>
-                <Square value={6} className={classes.square}/>
+                <Square state={"o"} className={classes.square}/>
+                <Square state={"o"} className={classes.square}/>
+                <Square state={"o"} className={classes.square}/>
             </div>
             <div className={classes.row}>
-                <Square value={7} className={classes.square}/>
-                <Square value={8} className={classes.square}/>
-                <Square value={9} className={classes.square}/>
+                <Square state={"x"} className={classes.square}/>
+                <Square state={"x"} className={classes.square}/>
+                <Square state={"x"} className={classes.square}/>
             </div>
         </div>
     )

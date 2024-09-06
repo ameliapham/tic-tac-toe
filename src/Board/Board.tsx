@@ -16,159 +16,40 @@ export function Board(props: Props) {
         [" ", " ", " "],
     ])
 
-    const [player, setPlayer] = useState<"playerA" | "playerB">("playerA")
+    const [player, setPlayer] = useState<"playerA" | "playerB">("playerA");
+
+    function onClick(params: { x: number; y: number; }) {
+        const { x, y } = params;
+        const newState = structuredClone(state)
+
+        let mark: "o" | "x";
+        if (player === "playerA") {
+            mark = "x"
+            setPlayer("playerB")
+        } else {
+            mark = "o"
+            setPlayer("playerA")
+        }
+        newState[x][y] = mark;
+        setState(newState)
+    }
 
     return (
         <div className={cx(className, classes.root)}>
             <div className={classes.row}>
-                <Square state={state[0][0]} className={classes.square} onClick={
-                    () => {
-                        const newState = structuredClone(state)
-
-                        let mark: "o" | "x";
-                        if (player === "playerA") {
-                            mark = "x"
-                            setPlayer("playerB")
-                        } else {
-                            mark = "o"
-                            setPlayer("playerA")
-                        }
-                        newState[0][0] = mark;
-                        setState(newState)
-                    }
-                } />
-                <Square state={state[0][1]} className={classes.square} onClick={
-                    () => {
-                        const newState = structuredClone(state)
-
-                        let mark: "o" | "x";
-                        if (player === "playerA") {
-                            mark = "x"
-                            setPlayer("playerB")
-                        } else {
-                            mark = "o"
-                            setPlayer("playerA")
-                        }
-                        newState[0][1] = mark;
-                        setState(newState)
-                    }
-                } />
-                <Square state={state[0][2]} className={classes.square} onClick={
-                    () => {
-                        const newState = structuredClone(state)
-
-                        let mark: "o" | "x";
-                        if (player === "playerA") {
-                            mark = "x"
-                            setPlayer("playerB")
-                        } else {
-                            mark = "o"
-                            setPlayer("playerA")
-                        }
-                        newState[0][2] = mark;
-                        setState(newState)
-                    }
-                } />
+                <Square state={state[0][0]} className={classes.square} onClick={() => onClick({ x: 0, y: 0 })} />
+                <Square state={state[0][1]} className={classes.square} onClick={() => onClick({ x: 0, y: 1 })} />
+                <Square state={state[0][2]} className={classes.square} onClick={() => onClick({ x: 0, y: 2 })} />
             </div>
             <div className={classes.row}>
-                <Square state={state[1][0]} className={classes.square} onClick={
-                    () => {
-                        const newState = structuredClone(state)
-
-                        let mark: "o" | "x";
-                        if (player === "playerA") {
-                            mark = "x"
-                            setPlayer("playerB")
-                        } else {
-                            mark = "o"
-                            setPlayer("playerA")
-                        }
-                        newState[1][0] = mark;
-                        setState(newState)
-                    }
-                } />
-                <Square state={state[1][1]} className={classes.square} onClick={
-                    () => {
-                        const newState = structuredClone(state)
-
-                        let mark: "o" | "x";
-                        if (player === "playerA") {
-                            mark = "x"
-                            setPlayer("playerB")
-                        } else {
-                            mark = "o"
-                            setPlayer("playerA")
-                        }
-                        newState[1][1] = mark;
-                        setState(newState)
-                    }
-                } />
-                <Square state={state[1][2]} className={classes.square} onClick={
-                    () => {
-                        const newState = structuredClone(state)
-
-                        let mark: "o" | "x";
-                        if (player === "playerA") {
-                            mark = "x"
-                            setPlayer("playerB")
-                        } else {
-                            mark = "o"
-                            setPlayer("playerA")
-                        }
-                        newState[1][2] = mark;
-                        setState(newState)
-                    }
-                } />
+                <Square state={state[1][0]} className={classes.square} onClick={() => onClick({ x: 1, y: 0 })} />
+                <Square state={state[1][1]} className={classes.square} onClick={() => onClick({ x: 1, y: 1 })} />
+                <Square state={state[1][2]} className={classes.square} onClick={() => onClick({ x: 1, y: 2 })} />
             </div>
             <div className={classes.row}>
-                <Square state={state[2][0]} className={classes.square} onClick={
-                    () => {
-                        const newState = structuredClone(state)
-
-                        let mark: "o" | "x";
-                        if (player === "playerA") {
-                            mark = "x"
-                            setPlayer("playerB")
-                        } else {
-                            mark = "o"
-                            setPlayer("playerA")
-                        }
-                        newState[2][0] = mark;
-                        setState(newState)
-                    }
-                } />
-                <Square state={state[2][1]} className={classes.square} onClick={
-                    () => {
-                        const newState = structuredClone(state)
-
-                        let mark: "o" | "x";
-                        if (player === "playerA") {
-                            mark = "x"
-                            setPlayer("playerB")
-                        } else {
-                            mark = "o"
-                            setPlayer("playerA")
-                        }
-                        newState[2][1] = mark;
-                        setState(newState)
-                    }
-                } />
-                <Square state={state[2][2]} className={classes.square} onClick={
-                    () => {
-                        const newState = structuredClone(state)
-
-                        let mark: "o" | "x";
-                        if (player === "playerA") {
-                            mark = "x"
-                            setPlayer("playerB")
-                        } else {
-                            mark = "o"
-                            setPlayer("playerA")
-                        }
-                        newState[2][2] = mark;
-                        setState(newState)
-                    }
-                } />
+                <Square state={state[2][0]} className={classes.square} onClick={() => onClick({ x: 2, y: 0 })} />
+                <Square state={state[2][1]} className={classes.square} onClick={() => onClick({ x: 2, y: 1 })} />
+                <Square state={state[2][2]} className={classes.square} onClick={() => onClick({ x: 2, y: 2 })} />
             </div>
         </div>
     )

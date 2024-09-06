@@ -20,9 +20,7 @@ const useStyle = tss
     .withName({ Square })
     .create({
         "square": {
-            "border": "1px solid red",
-            "width": "50px",
-            "height": "50px",
-            "background": "pink"
+            "border": "1px solid #606c38",
+            "background": "#fefae0"
         }
     })

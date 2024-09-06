@@ -35,7 +35,7 @@ const useStyle = tss
             "background": "#fefae0",
             "display" : "flex",
             "justifyContent" : "center",
-            "cursor": state !== ""? "pointer" : undefined
+            "cursor": state === ""? "pointer" : undefined
         },
         "img": {
             "width": "30%"

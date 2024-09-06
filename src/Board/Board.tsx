@@ -37,19 +37,19 @@ export function Board(props: Props) {
     return (
         <div className={cx(className, classes.root)}>
             <div className={classes.row}>
-                <Square state={state[0][0]} className={classes.square} onClick={() => onClick({ x: 0, y: 0 })} />
-                <Square state={state[0][1]} className={classes.square} onClick={() => onClick({ x: 0, y: 1 })} />
-                <Square state={state[0][2]} className={classes.square} onClick={() => onClick({ x: 0, y: 2 })} />
+                {[0, 1, 2].map(y => (
+                    <Square key={y} state={state[0][y]} className={classes.square} onClick={() => onClick({ x: 0, y })} />
+                ))}
             </div>
             <div className={classes.row}>
-                <Square state={state[1][0]} className={classes.square} onClick={() => onClick({ x: 1, y: 0 })} />
-                <Square state={state[1][1]} className={classes.square} onClick={() => onClick({ x: 1, y: 1 })} />
-                <Square state={state[1][2]} className={classes.square} onClick={() => onClick({ x: 1, y: 2 })} />
+                {[0, 1, 2].map(y => (
+                    <Square key={y} state={state[1][y]} className={classes.square} onClick={() => onClick({ x: 1, y })} />
+                ))}
             </div>
             <div className={classes.row}>
-                <Square state={state[2][0]} className={classes.square} onClick={() => onClick({ x: 2, y: 0 })} />
-                <Square state={state[2][1]} className={classes.square} onClick={() => onClick({ x: 2, y: 1 })} />
-                <Square state={state[2][2]} className={classes.square} onClick={() => onClick({ x: 2, y: 2 })} />
+                {[0, 1, 2].map(y => (
+                    <Square key={y} state={state[2][y]} className={classes.square} onClick={() => onClick({ x: 2, y })} />
+                ))}
             </div>
         </div>
     )
